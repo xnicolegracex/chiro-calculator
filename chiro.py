@@ -2,7 +2,8 @@ import streamlit as st
 
 # Initial fixed treatment prices
 treatment_prices = {
-    "First Consultation": 80,
+    "Consultation": 80,
+    "First Treatment": 200,
     "Follow Up": 130,
     "Follow Up (Concession Rate)": 115,
     "15x Package": 1725,
