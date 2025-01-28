@@ -58,11 +58,26 @@ if st.button("Calculate Earnings"):
     st.subheader(f"Total Earnings after {commission}% commission: ${total_earnings:.2f}")
 
 # Modify Treatment Button
+#if st.button("Modify Treatment Prices"):
+#    st.subheader("Modify Treatment Prices")
+    # Allow the user to update treatment prices
+#    for treatment in list(treatment_prices.keys()):
+#        new_price = st.number_input(f"New price for {treatment}", min_value=0.0, step=1.0, value=treatment_prices[treatment])
+#        treatment_prices[treatment] = new_price
+
+#    st.success("Treatment prices updated successfully!")
+
+# Modify Treatment Button
 if st.button("Modify Treatment Prices"):
     st.subheader("Modify Treatment Prices")
     # Allow the user to update treatment prices
     for treatment in list(treatment_prices.keys()):
-        new_price = st.number_input(f"New price for {treatment}", min_value=0.0, step=1.0, value=treatment_prices[treatment])
+        new_price = st.number_input(
+            f"New price for {treatment}",
+            min_value=0.0,
+            step=1.0,
+            value=float(treatment_prices[treatment])  # Ensure the value is treated as a float
+        )
         treatment_prices[treatment] = new_price
 
     st.success("Treatment prices updated successfully!")
