@@ -50,7 +50,7 @@ for i in range(num_treatments):
         treatments[treatment] = patient_count
 
 # Commission input
-commission = st.number_input("Enter your commission percentage", min_value=25.0, step=1)
+commission = st.number_input("Enter your commission percentage", min_value=0.0, step=0.1)
 
 # Calculate and display earnings
 if st.button("Calculate Earnings"):
