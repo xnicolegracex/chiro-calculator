@@ -33,7 +33,7 @@ st.subheader('Enter Treatments & Patient Count')
 treatments = {}
 
 # Add input fields for treatments
-num_treatments = st.number_input("How many different treatments did you perform today?", min_value=1, max_value=10, step=1)
+num_treatments = st.number_input("How many different treatments did you perform?", min_value=1, max_value=10, step=1)
 
 for i in range(num_treatments):
     treatment = st.selectbox(f"Treatment {i+1}", options=list(treatment_prices.keys()) + ["Custom Treatment"])
@@ -50,7 +50,7 @@ for i in range(num_treatments):
         treatments[treatment] = patient_count
 
 # Commission input
-commission = st.number_input("Enter your commission percentage", min_value=0.0, step=0.1)
+commission = st.number_input("Enter your commission percentage", min_value=25.0, step=1)
 
 # Calculate and display earnings
 if st.button("Calculate Earnings"):
